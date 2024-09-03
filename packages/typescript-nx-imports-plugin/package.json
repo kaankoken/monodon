@@ -4,7 +4,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cammisuli/monodon.git",
+    "url": "https://github.com/kaankoken/monodon.git",
     "directory": "packages/typescript-nx-imports-plugin"
   },
   "private": false,

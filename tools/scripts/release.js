@@ -54,7 +54,7 @@ const yargs = require('yargs');
     }
 
     if (!options.gitRemote) {
-      options.gitRemote = getRemoteFor('git@github.com:Cammisuli/monodon.git');
+      options.gitRemote = getRemoteFor('git@kaankoken-github.com:kaankoken/monodon.git');
     }
 
     console.log();
