@@ -1,3 +1,24 @@
+## 2.0.0-beta.2 (2024-09-03)
+
+
+### 🚀 Features
+
+- snake case option ([423a578](https://github.com/kaankoken/monodon/commit/423a578))
+
+
+### 🩹 Fixes
+
+- remove relative path format ([1214b75](https://github.com/kaankoken/monodon/commit/1214b75))
+
+- **toml:** single quote issue ([bd85868](https://github.com/kaankoken/monodon/commit/bd85868))
+
+- **toml:** nested objects ([e870338](https://github.com/kaankoken/monodon/commit/e870338))
+
+
+### ❤️  Thank You
+
+- Kaan Taha Köken @kaankoken
+
 # Changelog
 
 ## 1.4.0 (2024-02-23)
