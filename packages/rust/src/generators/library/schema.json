@@ -43,6 +43,11 @@
       "type": "boolean",
       "description": "Adds napi support to the generated library",
       "default": false
+    },
+    "useKebabCase": {
+      "type": "boolean",
+      "description": "Use kebab-case instead of snake_case for naming",
+      "default": false
     }
   },
   "required": [

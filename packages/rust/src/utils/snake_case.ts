@@ -1,19 +1,30 @@
-export default function snake_case(str: string): string {
+export default function snake_case(str: string, useKebabCase = false): string {
   const chars = str.split('');
 
   let converted = '';
+  let prevCharWasSpecial = false;
 
   for (const char of chars) {
     if (isLetter(char)) {
-      converted += char.toLowerCase();
+      if (prevCharWasSpecial) {
+        converted += char.toLowerCase();
+        prevCharWasSpecial = false;
+      } else {
+        converted += char.toLowerCase();
+      }
     } else if (isNumber(char)) {
       converted += char;
+      prevCharWasSpecial = false;
     } else {
-      converted += '_';
+      if (!prevCharWasSpecial) {
+        converted += useKebabCase ? '-' : '_';
+      }
+      prevCharWasSpecial = true;
     }
   }
 
-  return converted;
+  // Remove leading or trailing separators
+  return converted.replace(/^[-_]+|[-_]+$/g, '');
 }
 
 function isLetter(char: string) {

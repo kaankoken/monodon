@@ -32,6 +32,11 @@
       "type": "string",
       "description": "A directory where the project is placed",
       "alias": "d"
+    },
+    "useKebabCase": {
+      "type": "boolean",
+      "description": "Use kebab-case instead of snake_case for naming",
+      "default": false
     }
   },
   "required": [

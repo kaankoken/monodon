@@ -15,16 +15,21 @@ export function normalizeOptions<
     edition?: '2015' | '2018' | '2021';
     tags?: string;
     directory?: string;
+    useKebabCase?: boolean;
   }
 >(tree: Tree, type: 'app' | 'lib', options: T): NormalizedSchema & T {
-  const name = snake_case(options.name);
+  const useKebabCase = options.useKebabCase ?? false;
+  const name = snake_case(options.name, useKebabCase);
   const projectDirectory = options.directory
     ? `${options.directory
-        .split('/')
-        .map((p) => snake_case(p))
-        .join('/')}/${name}`
+      .split('/')
+      .map((p) => snake_case(p, useKebabCase))
+      .join('/')}/${name}`
     : name;
-  const projectName = projectDirectory.replace(new RegExp('/', 'g'), '_');
+  const projectName = projectDirectory.replace(
+    new RegExp('/', 'g'),
+    useKebabCase ? '-' : '_'
+  );
 
   const { appsDir, libsDir } = getWorkspaceLayout(tree);
   let baseDir = '';
